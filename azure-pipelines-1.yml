@@ -48,5 +48,15 @@ steps:
   inputs:
     SourceFolder: '$(Build.ArtifactStagingDirectory)'
     Contents: '**/*.zip'
-    TargetFolder: '$(Build.SourcesDirectory)'
+    TargetFolder: '$(Build.SourcesDirectory)/deploy'
+    OverWrite: true
+
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '**/*.dacpac'
+    TargetFolder: '$(Build.SourcesDirectory)/deploy'
+    OverWrite: true
+
 
