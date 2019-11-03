@@ -44,9 +44,9 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(Build.ArtifactStagingDirectory)'
-        Contents: '**/*.zip'
-        TargetFolder: '$(Build.SourcesDirectory)'
-        OverWrite: true
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/*.zip'
+    TargetFolder: '$(Build.SourcesDirectory)'
+
